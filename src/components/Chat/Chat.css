@@ -2,11 +2,11 @@
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 80% 20%;
+    grid-template-columns: 100%;
     grid-template-rows: calc(100% - 3rem) 3rem;
     grid-template-areas: 
-        "messages messages"
-        "input    send";
+        "messages"
+        "user-input";
 }
 
 .messages {
@@ -25,6 +25,13 @@ dt.me, dd.me {
 
 dd.me {
     margin: 0 40px 0 0;
+}
+
+.chat-box form {
+    grid-area: user-input;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-areas: "input send";
 }
 
 .chat-box textarea {
