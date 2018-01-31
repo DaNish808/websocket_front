@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import Chat from './components/Chat/Chat';
 
 import './App.css';
+
 
 class App extends Component {
   render() {
@@ -13,4 +16,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(
+  state => state,
+  null
+)(App);
