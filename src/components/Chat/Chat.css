@@ -1,0 +1,36 @@
+.chat-box {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: calc(100% - 3rem) 3rem;
+    grid-template-areas: 
+        "messages messages"
+        "input    send";
+}
+
+.messages {
+    grid-area: messages;
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+dt.me, dd.me {
+    text-align: right;
+    color: blue;
+}
+
+dd.me {
+    margin: 0 40px 0 0;
+}
+
+.chat-box textarea {
+    grid-area: input;
+}
+
+.chat-box button {
+    grid-area: send;
+}
