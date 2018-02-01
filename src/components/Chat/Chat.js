@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import { post } from '../../state/actions/messages';
 
 import './Chat.css';
 
+import io from 'socket.io-client';
+const socket = io.connect('http://localhost:8080');
+socket.on('connection', () => console.log('socket connected'));
+
 
 class Chat extends Component {
 
-  postHandler = e => {
+  postHandler = async e => {
     e.preventDefault();
     this.props.post(e.target.message.value);
   }
